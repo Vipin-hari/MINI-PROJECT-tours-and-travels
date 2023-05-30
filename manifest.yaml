@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: kgisl
+    labels:
+        app: kgisl
+spec: 
+    replicas: 3
+    selector:
+        matchLabels:
+            app: kgisl
+    template:
+        metadata:
+            labels:
+                app: kgisl
+        spec:
+            containers:
+            - name: kgisl
+              image: us.icr.io/mini/kgisl
+              ports: 
+              - containerPort: 5000
+              
